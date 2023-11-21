@@ -1,1 +1,1 @@
-alert("Bring on the Forcasting...");
+alert("Bring on the Forecasting...");
