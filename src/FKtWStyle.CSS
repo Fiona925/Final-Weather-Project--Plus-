@@ -1,6 +1,37 @@
+body {
+    background-color: powderblue;
+    font-family: 'Signika', sans-serif;
+}
+
+.weatherApp {
+    background-color: ivory;
+    max-width: 650px;
+    margin: 60px auto;
+    border: 2px solid #86b9b0;
+    border-radius: 100px 100px 100px 100px;
+    padding: 40px;
+    box-shadow: 0px 40px 40px rgba(134, 185, 176, 0.9);
+    }
+
+
 header {
     color: powderblue;
     text-align: left;
-    text-decoration: double;
-    font-family: 'Signika', sans-serif;;
+    text-decoration: underline;
+    border-bottom: 1px solid #f9f7fe;
+    padding-bottom: 15px;
+}
+
+.dayDate, .time, .humidity, .humidity-unit, .wind, .wind-unit, .temp-value, .weatherDescription, .advice {
+    color: powderblue;
+}
+
+a {
+color: powderblue;
+}
+
+footer {
+    border-top: 1px solid #f9f7fe;
+    text-align: center;
+    padding-top: 15px;
 }
