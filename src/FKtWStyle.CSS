@@ -39,8 +39,6 @@ body {
    width: 86%;
    font-size: 18px;
    padding: 10px;
-
-
 }
 
 .location-input:hover {
@@ -65,6 +63,55 @@ line-height: 1;
 border-radius: 5px;
 }
 
+h1 {
+    text-shadow: 20px;
+    font-size: 48px;
+    padding: 0 7px 10px 0;
+    margin: 0 20px;
+    border: 0;
+    }
+
+    .detail {
+        padding: 7px 7px;
+        margin: 20px 20px;
+        border: 0;   
+    }
+
+.information {
+    display: flex;
+    justify-content: space-between;
+    }
+
+.temp {
+    padding: 7px 7px 10px 0;
+    margin: 20px 20px;
+    border: 0;  
+}
+
+.temp-icon {
+    font-size: 20px;
+    position: relative;
+    top: -5px;
+
+}
+
+.temp-value {
+    font-size: 42px;
+    position: relative;
+    }
+.temp-unit {
+    font-size: 22px;
+    bottom: -20px;
+}
+
+h2 
+{
+    font-size: 20px;
+    padding: 7px 7px;
+    margin: 20px 20px;
+    border: 0; 
+    font-weight: 500; 
+}
 a {
 color: powderblue;
 }
