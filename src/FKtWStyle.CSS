@@ -28,7 +28,7 @@ body {
     font-size: 22px;
 }
 
-.dayDate, .time, .humidity, .humidity-unit, .wind, .wind-unit, .temp-value, .weatherDescription, .advice {
+.day, .date, .month, .year, .hours, .minutes, .humidity, .humidity-unit, .wind, .wind-unit, .temp-value, .weatherDescription, .advice {
     color: powderblue;
 }
 
