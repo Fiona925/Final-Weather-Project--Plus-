@@ -22,10 +22,24 @@ body {
     }
 
 .currentDateTime {
-    padding: 10px;
-    margin: 0;
-    text-align: center;
+   
     font-size: 22px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dateHeading {
+    padding: 1px 1px;
+    margin: 1px 100px;
+    border:  2px solid #86b9b0;
+    text-align: center;
+}
+
+.timeHeading {
+    padding: 1px 1px;
+    margin: 1px 100px;
+    border:  2px solid #86b9b0;
+    text-align: center;
 }
 
 .day, .date, .month, .year, .hours, .minutes, .humidity, .humidity-unit, .wind, .wind-unit, .temp-value, .weatherDescription, .advice {

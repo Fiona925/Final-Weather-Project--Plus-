@@ -1,14 +1,25 @@
 alert("Bring on the Forecasting...");
-
+function formatDate(date) {
 
 let now = new Date();
-let currentMilliseconds = now.getMilliseconds();
-let currentSeconds = now.getSeconds();
-let currentMinutes = now.getMinutes();
-let currentHours = now.getHours();
+let currentMinutes = date.getMinutes();
+  
+if (currentMinutes < 10) 
+{ currentMinutes = `0${currentMinutes}`; }
+
+let currentHours = date.getHours();
+
+if (currentHours < 10) 
+{ currentHours = `0${currentHours}`; }
+
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let currentDay = days[now.getDay()];
+
 let currentDate = now.getDate();
+
+if (currentDate < 10) 
+{ currentDate = `0${currentHours}`; }
+
 let months = [
   "January",
   "Feburary",
@@ -26,6 +37,11 @@ let months = [
 let currentMonth = months[now.getMonth()];
 let currentYear = now.getFullYear();
 
+
+
+
+
+}
 
 let minutes = document.getElementById("minutes");
 minutes.innerHTML = `${currentMinutes}`;
