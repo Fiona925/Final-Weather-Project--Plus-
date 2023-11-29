@@ -1,4 +1,3 @@
-alert("Bring on the Forecasting...");
 let now = new Date();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let currentDay = days[now.getDay()];
@@ -54,13 +53,12 @@ month.innerHTML = `${currentMonth}`;
 let year = document.getElementById("year");
 year.innerHTML = `${currentYear}`;
 
-function displayTemperature(response) {
+function displayInformation(response) {
   let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector("#temp-value");
 
   temperatureElement.innerHTML = `${temperature}`
   
-
   let h1 = document.querySelector("#location");
   h1.innerHTML = response.data.city;
 
@@ -70,25 +68,32 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = response.data.wind.speed;
 
+  let itFeelsLike = Math.round(response.data.temperature.feels_like);
+  let feelsLikeElement = document.querySelector("#feelsLike");
+feelsLikeElement.innerHTML = `${itFeelsLike}`;
+
   let descriptionElement = document.querySelector("#weatherDescription");
   descriptionElement.innerHTML = response.data.condition.description;
 
+  let iconElement = document.querySelector("#temp-icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="temp-icon" />;
+
+}
+
+  function apiData(city) {
+    let apiKey = "33betdbcb4109a093d33a9a0230cbfob";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayInformation);
   }
-
-
-
-
 
 function citySearch(event) {
     event.preventDefault();
      
     let newCityName = document.querySelector("#location-input");
-    let city = newCityName.value;
-
-  let apiKey = "33betdbcb4109a093d33a9a0230cbfob";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
-}
+    apiData(newCityName.value);
+ }
 
   let citySearchClick = document.querySelector("#locationSearchBar");
   citySearchClick.addEventListener("submit", citySearch); 
+
+  apiData("Warwick");
