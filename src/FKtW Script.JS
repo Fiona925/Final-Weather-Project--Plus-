@@ -114,7 +114,8 @@ feelsLikeElement.innerHTML = `${itFeelsLike}`;
     apiData(newCityName.value);
  }
 
+
   let citySearchClick = document.querySelector("#locationSearchBar");
-  citySearchClick.addEventListener("submit", citySearch); 
+  citySearchClick.addEventListener("submit", citySearch, advice); 
 
   apiData("Warwick");
