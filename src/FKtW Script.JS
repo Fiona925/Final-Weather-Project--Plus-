@@ -75,6 +75,9 @@ feelsLikeElement.innerHTML = `${itFeelsLike}`;
   let descriptionElement = document.querySelector("#weatherDescription");
   descriptionElement.innerHTML = response.data.condition.description;
 
+  let iconElement = document.querySelector("#temp-icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="temp-icon" />`
+
  }
 
   function apiData(city) {
