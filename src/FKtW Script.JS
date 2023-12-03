@@ -80,25 +80,25 @@ feelsLikeElement.innerHTML = `${itFeelsLike}`;
 
   let localTime = new Date(response.data.time * 1000);
   let localTimeElement =document.querySelector("#localTime");
-  localTimeElement.innerHTML = formatLocalTime(date);
+  localTimeElement.innerHTML = formatLocalTime(localTime);
 
  }
 
- function formatLocalTime(date) {
-  let localDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  let currentLocalDay = localDays[date.getDay()];
+ function formatLocalTime(localTime) {
+  let localDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",]
+  let currentLocalDay = localDays[localTime.getDay()];
          
-  let localMinutes = date.getMinutes();
+  let localMinutes = localTime.getMinutes();
     
   if (localMinutes < 10) 
   { localMinutes = `0${localMinutes}`; }
   
-  let localHours = date.getHours();
+  let localHours = localTime.getHours();
   
   if (localHours < 10) 
   { localHours = `0${localHours}`; } 
 
-  return `&{currentLocalDay}, ${localHours}:${localMinutes}`
+  return `${currentLocalDay}, ${localHours}:${localMinutes}`
 }
 
   function apiData(city) {
