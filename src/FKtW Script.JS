@@ -5,7 +5,7 @@ let currentDay = days[now.getDay()];
 let currentDate = now.getDate();
 
 if (currentDate < 10) 
-{ currentDate = `0${currentHours}`; }
+{ currentDate = `0${currentDate}`; }
 
 let months = [
   "January",
@@ -75,14 +75,11 @@ feelsLikeElement.innerHTML = `${itFeelsLike}`;
   let descriptionElement = document.querySelector("#weatherDescription");
   descriptionElement.innerHTML = response.data.condition.description;
 
-  let iconElement = document.querySelector("#temp-icon");
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="temp-icon" />;
-
-}
+ }
 
   function apiData(city) {
     let apiKey = "33betdbcb4109a093d33a9a0230cbfob";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayInformation);
   }
 
