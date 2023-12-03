@@ -78,7 +78,28 @@ feelsLikeElement.innerHTML = `${itFeelsLike}`;
   let iconElement = document.querySelector("#temp-icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="temp-icon" />`
 
+  let localTime = new Date(response.data.time * 1000);
+  let localTimeElement =document.querySelector("#localTime");
+  localTimeElement.innerHTML = formatLocalTime(date);
+
  }
+
+ function formatLocalTime(date) {
+  let localDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let currentLocalDay = localDays[date.getDay()];
+         
+  let localMinutes = date.getMinutes();
+    
+  if (localMinutes < 10) 
+  { localMinutes = `0${localMinutes}`; }
+  
+  let localHours = date.getHours();
+  
+  if (localHours < 10) 
+  { localHours = `0${localHours}`; } 
+
+  return `&{currentLocalDay}, ${localHours}:${localMinutes}`
+}
 
   function apiData(city) {
     let apiKey = "33betdbcb4109a093d33a9a0230cbfob";
@@ -86,7 +107,7 @@ feelsLikeElement.innerHTML = `${itFeelsLike}`;
     axios.get(apiUrl).then(displayInformation);
   }
 
-function citySearch(event) {
+ function citySearch(event) {
     event.preventDefault();
      
     let newCityName = document.querySelector("#location-input");
