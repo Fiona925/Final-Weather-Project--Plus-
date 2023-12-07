@@ -149,9 +149,11 @@ display: flex;
 justify-content: space-evenly;
 font-size: 16px;
 text-align: center;
+
 }
-.day1, .day2, .day3, .day4, .day5, .day6 { 
+.day1 { 
 border:  2px solid #86b9b0;
+width: 60px;
 }
 
 .forecast-day {

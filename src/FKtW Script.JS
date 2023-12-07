@@ -114,8 +114,32 @@ feelsLikeElement.innerHTML = `${itFeelsLike}`;
     apiData(newCityName.value);
  }
 
+function displayForecast() {
+  let forecastDays = ["Fri", "Sat", "Sun", "Mon", "Tues", "Wed", "Thurs"];
+  let forecastHtml = "";
+
+  forecastDays.forEach(function (day) {
+  forecastHtml =
+  forecastHtml +
+`
+ <div class="day1" id="day1">
+ <div class="forecast-day" id="forecast-day">${day}</div>
+ <div class="forecast-icon id="forecast-icon"> . </div> 
+ <div class="forecast-temp" id="forecast-temp">
+     <span class="forecast-high id="forecast-high">18°C</span>
+     <span class="forecast-low" id="forecast-low">9°C</span>
+ </div>
+</div>
+`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 
   let citySearchClick = document.querySelector("#locationSearchBar");
-  citySearchClick.addEventListener("submit", citySearch, advice); 
+  citySearchClick.addEventListener("submit", citySearch); 
 
   apiData("Warwick");
+  displayForecast();
