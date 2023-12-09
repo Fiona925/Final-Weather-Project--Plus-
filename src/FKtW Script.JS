@@ -100,7 +100,7 @@ getForecast(response.data.city);
   if (localHours < 10) 
   { localHours = `0${localHours}`; } 
 
-  return `${currentLocalDay}, ${localHours}:${localMinutes}`
+   return `${currentLocalDay}, ${localHours}:${localMinutes}`
 }
 
   function apiData(city) {
